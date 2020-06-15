@@ -6,6 +6,10 @@ import com.myhanoli.apirest.models.entity.Empleado;
 
 public interface IEmpleadoService {
 	
-	public List<Empleado> findAll();
+	public List<Empleado> getEmpleados();
 
+	public Empleado getEmpleado(Long id);
+	
+	public Empleado guardar(Empleado empleado);
+	
 }

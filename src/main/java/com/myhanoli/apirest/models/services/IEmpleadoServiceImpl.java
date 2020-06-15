@@ -15,10 +15,20 @@ public class IEmpleadoServiceImpl implements IEmpleadoService{
 	public IEmpleadoDao empleadoDao;
 		
 	@Override
-	public List<Empleado> findAll() {
+	public List<Empleado> getEmpleados() {
 		
 		return (List<Empleado>) empleadoDao.findAll();
 		
+	}
+
+	@Override
+	public Empleado getEmpleado(Long id) {
+		return empleadoDao.findById(id).orElse(null);
+	}
+
+	@Override
+	public Empleado guardar(Empleado empleado) {
+		return empleadoDao.save(empleado);
 	}
 
 	
