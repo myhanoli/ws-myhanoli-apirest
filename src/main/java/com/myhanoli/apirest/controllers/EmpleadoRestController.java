@@ -2,6 +2,7 @@ package com.myhanoli.apirest.controllers;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -51,6 +52,14 @@ public class EmpleadoRestController {
 		empleadoActual.setEmail(empleado.getEmail());
 		
 		return empleadoService.guardar(empleadoActual);
+		
+	}
+	
+	
+	@DeleteMapping("/eliminarById/{id}")
+	public void eliminarById(@PathVariable Long id) {
+		
+		empleadoService.eliminarbyId(id);
 		
 	}
 	

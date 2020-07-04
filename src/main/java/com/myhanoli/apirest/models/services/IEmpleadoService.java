@@ -12,4 +12,6 @@ public interface IEmpleadoService {
 	
 	public Empleado guardar(Empleado empleado);
 	
+	public void eliminarbyId(Long id);
+	
 }
